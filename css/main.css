@@ -1,0 +1,25 @@
+#content
+{
+	width: 80%;
+	margin: auto;
+}
+
+#loginTable
+{
+	width: 60%;
+	margin: auto;
+}
+
+#loginImage
+{
+	width: 50%;
+	margin: auto;
+}
+
+label
+{
+	width: 5em;
+    float: left;
+    margin-right: 0.5em;
+    display: block
+}
