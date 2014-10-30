@@ -1,4 +1,4 @@
 SEP-Not-Scoping
 ===============
 
-No scops here.
+No scops here. Dey banned
