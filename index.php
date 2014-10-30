@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php require('header.php'); ?>
 <div id="content">
 <table id="loginTable">
@@ -34,3 +35,10 @@
 </tr>
 </table>
 </div>
+=======
+<<<<<<< HEAD
+Hello
+=======
+<?php echo "dicks"; ?>
+>>>>>>> 0850904055fce179833774c7275caa6008d1e072
+>>>>>>> 92f37c0e7741d3308b67043fc73ff6421881caec
