@@ -7,22 +7,38 @@
 	</colgroup>
 <tr>
 <td>
+<!--
 	<table>
 	<tr>
 		<th>User Login</th>
 	</tr>
 	<tr>
-		<td><label for="userID">User ID</label> <input type="text" name="userId"/>
+		<td>
+		<form method="POST"><label for="user_id">User ID</label> <input type="text" name="user_id"/> </form>
 	</tr>
 	<tr>
-		<td><label for="password">Password</label><input type="password" name="password"/></td>
+		<td>
+		<form method="POST"><label for="password">Password</label><input type="password" name="password" /></td> </form>
 	</tr>
 	<tr>
-		<td><input type="submit" value="Register"/></td>
-		<td></td>
-		<td><input type="submit" value="Log In" /></td>
+		<td>
+			<form action="login-action.php" method="post">
+				<input type="submit" value="Log In" />
+				<input type="submit" value="Register"/>
+			</form>
+		</td>
 	</tr>
-	</table>
+	</table>-->
+	<?php
+		session_start();
+		if (isset($_SESSION['login_error']))
+			echo $_SESSION['login_error'];
+	?>
+	<form method="POST" action="login-action.php">
+		User ID: <input type="text" name="username"/>
+		Password: <input type="password" name="password"/>
+		<input type="submit" value="Log in"/>
+	</form>
 </td>
 <td>
 <table id="loginImage">
