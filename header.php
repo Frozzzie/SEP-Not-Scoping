@@ -3,12 +3,12 @@
 <head>
    <link href="css/main.css" rel="stylesheet" type="text/css"/>
    <link href="css/chairmember.css" rel="stylesheet" type="text/css"/>
+   <script src="js/inputValidate.js"></script>
 <title>UTS Travel Lodging System</title>
 <?php if (1 + 1 == 2) { ?>
 <p class="spooky" id="right">You are currently logged in as Mr Noscope<br>
-<a href="index.php">This is not me?</a><br>
-<form action="index.php" method="post">
-<input type="button" value="Log out" class="spookybutton" /></p>
+This is not me?<form action="index.php" method="post">
+<a href="index.php"><input type="button" value="Log out" class="spookybutton" /></a></p>
 </form>
 <?php } ?>
 </head>

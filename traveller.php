@@ -22,3 +22,4 @@
 <img id="spookyCenter" src="images/2spook.gif" width="40%"/>
 </div>
 </div>
+<?php require('footer.php'); ?>

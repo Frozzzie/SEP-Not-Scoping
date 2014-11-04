@@ -1,10 +1,6 @@
 <?php require('header.php'); ?>
 <div id="content">
 <table id="loginTable">
-<colgroup>
-		<col width="60%">
-		<col width="40%">
-	</colgroup>
 <tr>
 <td>
 <!--
@@ -34,19 +30,23 @@
 		if (isset($_SESSION['login_error']))
 			echo $_SESSION['login_error'];
 	?>
-	<form method="POST" action="login-action.php" class="spooky">
-		<label for="user">User ID: </label><input type="text" name="username"/>
-		<label for="password">Password: </label><input type="password" name="password"/>
-		<input type="submit" value="Log in"/>
+	
+	<form method="POST" onsubmit="return loginValidate();" name="loginform" action="login-action.php"  class="spooky">
+	<table>
+	<tr>
+		<td col="2"><label for="user">User ID: </label><input type="text" name="username"/></td></tr>
+	<tr>
+		<td><label for="password">Password: </label><input type="password" name="password"/></td></tr>
+	<tr>
+		<td><input type="submit" value="Log in"/></td>
+	</tr>
 	</form>
+	</table>
 </td>
 <td>
-<table id="loginImage">
-<tr>
-<td><img src="images/login.jpg"/></td>
-</tr>
-</table>
+<img src="images/loginNew.jpg"/></td>
 </td>
 </tr>
 </table>
 </div>
+<?php require("footer.php"); ?>

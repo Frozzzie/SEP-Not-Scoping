@@ -21,12 +21,6 @@ label
 	width: 5em;
     float: left;
     margin-right: 0.5em;
-    display: block
-}
-
-body
-{
-		background-color: black;
 }
 
 .spooky
@@ -61,12 +55,6 @@ a
 #menu
 {
 	width: 19.8%;
-}
-
-#content
-{
-	width: 80%;
-	margin: auto;
 }
 
 #mainSpooks
@@ -120,5 +108,50 @@ h1
 {
 	padding-top: 20px;
 	display: block;
+	margin: auto;
+}
+
+.activeSpooks
+{
+	background-color: red;
+}
+
+#footer
+{
+	width: 100%;
+	background-color: white;
+	float: absolute;
+	color: black;
+}
+
+#content
+{
+	width: 80%;
+	margin-bottom: -2em;
+	min-height: 100%;
+}
+
+#content:after {
+  content: ".";
+  display: block;
+}
+
+#footer, #content:after {
+  height: 2em; 
+}
+
+*
+{
+  margin: 0;
+}
+html , body
+{
+  height: 100%;
+  color: yellow;
+  background-image: url("seizure.gif");
+}
+
+#spookyform
+{
 	margin: auto;
 }

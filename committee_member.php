@@ -3,11 +3,12 @@
 	require_once 'header.php';
 ?>
 
-<div id="subheader"> 
-	<div id="menu">
-		<li class="activemenu"><a href="committee_chair.php">Recent Applications</a></li>
-		
-	</div>
+<div id="content">
+<table id="menu">
+	<tr>
+		<th><a href="committee_chair.php">Recent Applications</a></th>		
+	</tr>
+</table>
 </div>
 
 <?php
