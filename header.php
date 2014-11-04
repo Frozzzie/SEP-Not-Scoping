@@ -5,8 +5,8 @@
 <title>UTS Travel Lodging System</title>
 </head>
 <body>
-<?php if (1 + 1 == 5) { ?>
+<?php if (1 + 1 == 2) { ?>
 <p>You are currently logged in as Mr Noscope</p>
-<p><a href="">This is not me?</a></p>
+<p><a href="index.php">This is not me?</a></p>
 <p><input type="button" value="Log out" /></p>
 <?php } ?>
