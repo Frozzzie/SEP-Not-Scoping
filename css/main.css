@@ -127,4 +127,21 @@ h1
 	padding-top: 20px;
 	display: block;
 	margin: auto;
+	
+	width: 200px;
+	position: absolute;
+	-webkit-animation: myfirst 5s linear 2s infinite alternate;
+	animation: myfirst 5s linear 2s infinite alternate;
+}
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes myfirst {
+    0%   {left:0px; top:0px;}
+    100% {left:1000px; top:0px;}
+}
+
+/* Standard syntax */
+@keyframes myfirst {
+    0%   {left:0px; top:0px;}
+    100% {left:1000px; top:0px;}
 }
