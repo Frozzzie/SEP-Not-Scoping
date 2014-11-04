@@ -34,6 +34,11 @@ body
 	color: yellow;
 }
 
+img
+{
+	width:1000px;
+}
+
 #right
 {
 	text-align: right;
@@ -67,6 +72,7 @@ a
 {
 	width: 80%;
 	margin: auto;
+	padding: 7% 0px 20px 0px;
 }
 
 #mainSpooks
