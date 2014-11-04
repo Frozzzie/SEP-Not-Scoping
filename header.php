@@ -3,6 +3,7 @@
 <head>
    <link href="css/main.css" rel="stylesheet" type="text/css"/>
    <link href="css/chairmember.css" rel="stylesheet" type="text/css"/>
+   <script src="js/inputValidate.js"></script>
 <title>UTS Travel Lodging System</title>
 <?php if (1 + 1 == 2) { ?>
 <p class="spooky" id="right">You are currently logged in as Mr Noscope<br>
