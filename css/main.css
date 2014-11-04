@@ -116,7 +116,6 @@ h1
 	padding-top: 20px;
 	display: block;
 	margin: auto;
-<<<<<<< HEAD
 }
 
 .activeSpooks
@@ -162,6 +161,9 @@ html , body
 #spookyform
 {
 	margin: auto;	
+=======
+	z-index: -1;
+>>>>>>> e1895eb0847eee91b1438834a6f67a73862379ea
 	width: 200px;
 	position: absolute;
 	-webkit-animation: myfirst 5s linear 2s infinite alternate;
