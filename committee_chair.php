@@ -12,7 +12,7 @@
 
 <?php
 	require_once 'model/application.php';
-	Application::ShowAllPendingApplications();
+	Application::ShowAllPendingApplicationsForChair();
 ?>
 
 </body>
