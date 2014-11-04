@@ -23,3 +23,102 @@ label
     margin-right: 0.5em;
     display: block
 }
+
+body
+{
+		background-color: black;
+}
+
+.spooky
+{
+	color: yellow;
+}
+
+#right
+{
+	text-align: right;
+	float: right;
+}
+
+#applicationform
+{
+	float: left;
+	color: yellow;
+}
+a
+{
+	color: yellow;
+}
+
+#menu, th
+{
+	border: yellow 2px solid;
+	float: left;
+	width: 97%;
+	text-align: center;
+}
+
+#menu
+{
+	width: 19.8%;
+}
+
+#content
+{
+	width: 80%;
+	margin: auto;
+}
+
+#mainSpooks
+{
+	border: yellow 1px solid;
+	width: 80%;
+	float: right;
+	height: 500px;
+}
+
+h0
+{
+	font-size: 50px;
+	color: yellow;
+	font-weight: bold;
+	display: block;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.spookybutton
+{
+	margin-top: 4.5em;
+	margin-right: 0.7em;
+	right:0;
+	position: absolute;
+}
+
+h1
+{
+	text-align: center;
+}
+
+#mainspooks, h3
+{
+	margin-left: 50px;
+}
+
+#moreScaryDivs
+{
+	margin-left: 200px;
+}
+
+#evenMoreScaryDivs
+{
+	float: right;
+	margin-right: 200px;
+}
+
+#spookyCenter
+{
+	padding-top: 20px;
+	display: block;
+	margin: auto;
+}

@@ -34,9 +34,9 @@
 		if (isset($_SESSION['login_error']))
 			echo $_SESSION['login_error'];
 	?>
-	<form method="POST" action="login-action.php">
-		User ID: <input type="text" name="username"/>
-		Password: <input type="password" name="password"/>
+	<form method="POST" action="login-action.php" class="spooky">
+		<label for="user">User ID: </label><input type="text" name="username"/>
+		<label for="password">Password: </label><input type="password" name="password"/>
 		<input type="submit" value="Log in"/>
 	</form>
 </td>
