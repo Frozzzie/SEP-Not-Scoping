@@ -6,14 +6,56 @@ require_once __DIR__.'/../inc/functions.php';
 
 class Application
 {
-	public static function CreateApplication($user, $content)
+	// yes I'm serious about this function.
+	public static function CreateApplication($user, $content, $supportingdocuments, $conference_url, $conf_start_date, $conf_end_date,
+			$travel_start_date, $travel_end_date, $quality_of_paper, bool $paper_accepted, bool $conf_confirmation_attached, bool $peer_review_attached,
+			bool $copy_of_paper_attached, bool $special_invitation, $special_duties, $pep_arrangement_details, bool $research_grant, bool $research_student,
+			$research_strength, bool $research_strength_travel_support, $funding_stage, $supervisor_has_grant, $vc_conference_fund, $request_air_fare,
+			$request_accomodation, $request_conf_fees, $request_meals, $request_local_fares, $request_car_mileage, $request_other)
 	{
-		$db = openDB();
-		$stmt = $db->prepare('INSERT INTO application (application_user, application_content, application_date, application_status) VALUES 
-											(?, ?, NOW(), "Pending")');
+		$request_total = $request_conference_fund + $request_air_fare + $request_accomodation + $request_conf_fees + $request_meals + $request_local_fares +
+				$request_car_mileage + $request_other;
 		
+		$db = openDB();
+		$stmt = $db->prepare('INSERT INTO application (application_user, application_content, application_date, application_status, application_supporting_documents
+							application_conf_url, conf_start_date, conf_end_date, travel_start_date, travel_end_date, quality_of_paper, paper_accepted
+							conf_confirmation_attached, peer_review_attached, copy_of_paper_attached, special_invitation, special_dutues, pep_arrangement_details,
+							research_grant, research_student, research_strength, research_strength_travel_support, funding_stage, supervisor_has_grant,
+							vc_conference_fund, request_air_fare, request_accomodation, request_conf_fees, request_meals, request_local_fares,
+							request_car_mileage, request_other, request_total) VALUES 
+											(?, ?, NOW(), "Pending", ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+		// Don't laugh.
 		$stmt->bindParam(1, $user, PDO::PARAM_STR);
 		$stmt->bindParam(2, $content, PDO::PARAM_STR);
+		$stmt->bindParam(3, $supportingdocuments, PDO::PARAM_STR);
+		$stmt->bindParam(4, $conference_url, PDO::PARAM_STR);
+		$stmt->bindParam(5, $conf_start_date, PDO::PARAM_STR);
+		$stmt->bindParam(6, $conf_end_date, PDO::PARAM_STR);
+		$stmt->bindParam(7, $travel_start_date, PDO::PARAM_STR);
+		$stmt->bindParam(8, $travel_end_date, PDO::PARAM_STR);
+		$stmt->bindParam(9, $quality_of_paper, PDO::PARAM_STR);
+		$stmt->bindParam(10, $paper_accepted, PDO::PARAM_STR);
+		$stmt->bindParam(11, $conf_confirmation_attached, PDO::PARAM_STR);
+		$stmt->bindParam(12, $peer_review_attached, PDO::PARAM_STR);
+		$stmt->bindParam(13, $copy_of_paper_attached, PDO::PARAM_STR);
+		$stmt->bindParam(14, $special_invitation, PDO::PARAM_STR);
+		$stmt->bindParam(15, $special_duties, PDO::PARAM_STR);
+		$stmt->bindParam(16, $pep_arrangement_details, PDO::PARAM_STR);
+		$stmt->bindParam(17, $research_grant, PDO::PARAM_STR);
+		$stmt->bindParam(18, $research_student, PDO::PARAM_STR);
+		$stmt->bindParam(19, $research_strength, PDO::PARAM_STR);
+		$stmt->bindParam(20, $research_strength_travel_support, PDO::PARAM_STR);
+		$stmt->bindParam(21, $funding_stage, PDO::PARAM_STR);
+		$stmt->bindParam(22, $supervisor_has_grant, PDO::PARAM_STR);
+		$stmt->bindParam(23, $vc_conference_fund, PDO::PARAM_STR);
+		$stmt->bindParam(24, $request_air_fare, PDO::PARAM_STR);
+		$stmt->bindParam(25, $request_accomodation, PDO::PARAM_STR);
+		$stmt->bindParam(26, $request_conf_fees, PDO::PARAM_STR);
+		$stmt->bindParam(27, $request_meals, PDO::PARAM_STR);
+		$stmt->bindParam(28, $request_local_fares, PDO::PARAM_STR);
+		$stmt->bindParam(29, $request_car_mileage, PDO::PARAM_STR);
+		$stmt->bindParam(30, $request_other, PDO::PARAM_STR);
+		$stmt->bindParam(31, $request_total, PDO::PARAM_STR);
 		$stmt->execute();
 	}
 	
