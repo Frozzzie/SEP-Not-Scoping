@@ -30,7 +30,6 @@
 		if (isset($_SESSION['login_error']))
 			echo $_SESSION['login_error'];
 	?>
-	
 	<form method="POST" onsubmit="return loginValidate();" name="loginform" action="login-action.php"  class="spooky">
 	<table>
 	<tr>

@@ -1,7 +1,7 @@
 <?php
 	require_once 'header.php';
 	session_start();
-	if (in_array('successful_upload', $_SESSION) && $_SESSION['successful_upload'] == true)	
+	if (in_array('successful_upload', $_SESSION) && $_SESSION['successful_upload'] == true)
 	{
 		header("refresh: 1");
 		$_SESSION['successful_upload'] = false;
@@ -31,11 +31,12 @@
 				<td><input type="file" name="content"/></td>
 			</tr>
 			<tr>
-				<td><input type="submit" value="Submit Application"/></td>
+				<td>Application<input type="submit" value="Submit Application"/></td>
 			</tr>
 			</table>
 			
 		</form>
 	</div>
 </div>
+
 <?php require("footer.php"); ?>
