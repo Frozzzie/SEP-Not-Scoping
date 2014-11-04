@@ -1,4 +1,18 @@
 <?php
 	session_start();
-	echo "Hello Committee Chairman ".$_SESSION['user_info']['full_name'];
+	require_once 'header.php';
+	require_once 'model/application.php';
+	Application::ShowAllPendingApplications();
 ?>
+
+<div id="subheader"> 
+	<div id="menu">
+		<li class="activemenu"><a href="committee_chair.php">Recent Applications</a></li>
+		
+	</div>
+</div>
+
+
+
+</body>
+</html>

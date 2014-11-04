@@ -8,5 +8,7 @@
 <?php if (1 + 1 == 2) { ?>
 <p>You are currently logged in as Mr Noscope</p>
 <p><a href="index.php">This is not me?</a></p>
+<form action="index.php" method="post">
 <p><input type="button" value="Log out" /></p>
+</form>
 <?php } ?>
