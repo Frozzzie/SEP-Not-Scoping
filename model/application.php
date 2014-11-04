@@ -7,19 +7,22 @@ require_once __DIR__.'/../inc/functions.php';
 class Application
 {
 	// yes I'm serious about this function.
+	// bools are $paper_accepted, $conf_confirmation_attached, $peer_review_attached, $copy_of_paper_attached, $special_invitation, $research_grant,
+	// 		$research_student and $research_strength_travel_support.
+	// Just incase you were wondering which ones. The rest are numbers, texts and dates. Should be easy to tell what is what. Check the DB for more info.
 	public static function CreateApplication($user, $content, $supportingdocuments, $conference_url, $conf_start_date, $conf_end_date,
-			$travel_start_date, $travel_end_date, $quality_of_paper, bool $paper_accepted, bool $conf_confirmation_attached, bool $peer_review_attached,
-			bool $copy_of_paper_attached, bool $special_invitation, $special_duties, $pep_arrangement_details, bool $research_grant, bool $research_student,
-			$research_strength, bool $research_strength_travel_support, $funding_stage, $supervisor_has_grant, $vc_conference_fund, $request_air_fare,
+			$travel_start_date, $travel_end_date, $quality_of_paper, $paper_accepted, $conf_confirmation_attached, $peer_review_attached,
+			$copy_of_paper_attached, $special_invitation, $special_duties, $pep_arrangement_details, $research_grant, $research_student,
+			$research_strength, $research_strength_travel_support, $funding_stage, $supervisor_has_grant, $vc_conference_fund, $request_air_fare,
 			$request_accomodation, $request_conf_fees, $request_meals, $request_local_fares, $request_car_mileage, $request_other)
 	{
-		$request_total = $request_conference_fund + $request_air_fare + $request_accomodation + $request_conf_fees + $request_meals + $request_local_fares +
+		$request_total = $request_air_fare + $request_accomodation + $request_conf_fees + $request_meals + $request_local_fares +
 				$request_car_mileage + $request_other;
 		
 		$db = openDB();
-		$stmt = $db->prepare('INSERT INTO application (application_user, application_content, application_date, application_status, application_supporting_documents
-							application_conf_url, conf_start_date, conf_end_date, travel_start_date, travel_end_date, quality_of_paper, paper_accepted
-							conf_confirmation_attached, peer_review_attached, copy_of_paper_attached, special_invitation, special_dutues, pep_arrangement_details,
+		$stmt = $db->prepare('INSERT INTO application (application_user, application_content, application_date, application_status, application_supporting_documents,
+							application_conf_url, conf_start_date, conf_end_date, travel_start_date, travel_end_date, quality_of_paper, paper_accepted,
+							conf_confirmation_attached, peer_review_attached, copy_of_paper_attached, special_invitation, special_duties, pep_arrangement_details,
 							research_grant, research_student, research_strength, research_strength_travel_support, funding_stage, supervisor_has_grant,
 							vc_conference_fund, request_air_fare, request_accomodation, request_conf_fees, request_meals, request_local_fares,
 							request_car_mileage, request_other, request_total) VALUES 
