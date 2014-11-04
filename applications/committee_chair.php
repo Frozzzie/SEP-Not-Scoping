@@ -1,6 +1,8 @@
 <?php
 	session_start();
 	require_once 'header.php';
+	require_once 'model/application.php';
+	Application::ShowAllPendingApplications();
 ?>
 
 <div id="subheader"> 
@@ -10,10 +12,7 @@
 	</div>
 </div>
 
-<?php
-	require_once 'model/application.php';
-	Application::ShowAllPendingApplications();
-?>
+
 
 </body>
 </html>

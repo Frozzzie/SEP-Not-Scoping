@@ -42,12 +42,12 @@ class Application
 		$stmt->bindParam(1, $row['application_id'], PDO::PARAM_STR);
 		$stmt->execute();
 		$numberOfPosts = count($stmt->fetchAll());
-	
+		$fileDir = dirname(__DIR__).'/applications/'.$row['user_id'].'/'.$row['application_content'];
 		$result = "";
 		$result .= "<div id='applicationbox'>";
 		$result .= "<div id='application_fullname'>".$row['full_name']."</div>";
 		$result .= "<div id='application_date'>".$row['application_date']."</div>";
-		$result .= "<div id='application_content'>".$row['application_content']."</div>";
+		$result .= "<div id='application_content'><a href=".'phpfunc/download.php?file='.$fileDir." target='_blank'>View Application</a></div>";
 		$result .= "<div id='application_post_link'> <a href=''>".$numberOfPosts." comments. Click here to view them.</a></div>";
 		$result .= "</div>";
 		

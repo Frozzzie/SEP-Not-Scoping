@@ -9,9 +9,10 @@
 </div>
 
 <div id="applicationform">
-	<form method="post" action="phpfunc/create-application.php">
+	<form method="post" action="phpfunc/create-application.php" enctype="multipart/form-data">
+		<input type="file" name="content"/>
+		<br>
 		<input type="submit" value="Submit Application"/>
-		<label></label><input name="content" type="text"/>
 	</form>
 </div>
 	
