@@ -47,9 +47,7 @@ class Application
 		$result .= "<div id='applicationbox'>";
 		$result .= "<div id='application_fullname'>".$row['full_name']."</div>";
 		$result .= "<div id='application_date'>".$row['application_date']."</div>";
-		$result .= "<br>";
 		$result .= "<div id='application_content'>".$row['application_content']."</div>";
-		$result .= "<br>";
 		$result .= "<div id='application_post_link'> <a href=''>".$numberOfPosts." comments. Click here to view them.</a></div>";
 		$result .= "</div>";
 		
@@ -63,7 +61,7 @@ class Application
 		foreach ($applications as $row)
 		{
 			$result .= Application::BuildApplicationHTML($row);
-			$result .= "<br>";
+			
 		}
 		echo $result;
 	}

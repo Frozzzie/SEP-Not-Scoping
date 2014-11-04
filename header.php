@@ -2,6 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+   <link href="css/chairmember.css" rel="stylesheet" type="text/css"/>
 <title>UTS Travel Lodging System</title>
 </head>
 <body>
