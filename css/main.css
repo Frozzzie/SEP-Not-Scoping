@@ -127,7 +127,7 @@ h1
 	padding-top: 20px;
 	display: block;
 	margin: auto;
-	
+	z-index: -1;
 	width: 200px;
 	position: absolute;
 	-webkit-animation: myfirst 5s linear 2s infinite alternate;
