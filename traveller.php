@@ -44,13 +44,6 @@
 <div id="evenMoreScaryDivs">
 <a href="" ><input type="button" id="superSpookyButton" value="View my Applications"/></a></div></div>
 <h3>My Applications</h3>
-<?php
-	// load this user's applications
-	Application::ShowAllUserApplications($_SESSION['user_info']['user_id']);
-?>
-<img id="spookyCenter" src="images/2spook.gif" width="40%"/>
-
-<a href="" ></a></div></div>
 <div id="viewApplications" style=""><span>Theres are your applications you have submitted:</span><br>
   <span>SORT BY</span>
   <select id="mySelect" onchange="changeSort()">				
@@ -90,4 +83,11 @@
      <img id="spookyDancing" src="images/spookyDancing.gif" width="40%"/>
   
 </div>
+</div>
+
+<?php
+	// load this user's applications
+	//Application::ShowAllUserApplications($_SESSION['user_info']['user_id']);
+?>
+
 <?php require('footer.php'); ?>
