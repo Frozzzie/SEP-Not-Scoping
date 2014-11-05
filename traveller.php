@@ -46,7 +46,7 @@
 <a href="" ><input type="button" id="superSpookyButton" value="View my Applications"/></a></div></div>
 <br><br>
 <h3>My Applications</h3>
-<div id="viewApplications"><h3>These are your applications you have submitted:</h3><br>
+<div id="viewApplications"><h3>Your pending applications:</h3><br>
   <span>SORT BY</span>
   <select id="mySelect" onchange="changeSort()">				
 		<option value="all">Sort Settings
@@ -65,18 +65,17 @@
 			<?php 
 			
 			//get the arrays of applications and just display them here
-				$applications = Application::ShowAllUserApplicationsRaw($_SESSION['user_info']['user_id'])	
-			
-				while ($row = $applications(PDO::FETCH_ASSOC)) {
+				$applications = Application::ShowAllUserApplicationsRaw($_SESSION['user_info']['user_id']);
+				foreach ($applications as $row) {
 					$id = $row['application_id'];
-					$name = $row['full_name'];
+					$name = $row['paper_title'];
 					$modified = $row['application_date'];
-					$status = $row['application_content'];
+					$status = $row['application_status'];
 					echo "<tr>
-							<td>$name</td>
-							<td>$modified</td> 
-							<td>$status</td>
-							<td><button onclick=\"deleteApplication('$id', '$name')\">DELETE</button></td>
+							<td>{$name}</td>
+							<td>{$modified}</td> 
+							<td>{$status}</td>
+							<td><button onclick=\"deleteApplication('{$id}', '{$name}')\">DELETE</button></td>
 						</tr>";
 				}
 			
