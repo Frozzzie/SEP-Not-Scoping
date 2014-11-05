@@ -61,7 +61,6 @@ class Application
 	
 	public static function GetApplications($status)
 	{
-		$result = "";
 		$db = openDB();
 		if (isset($status))
 		{
@@ -70,6 +69,17 @@ class Application
 		}
 		else
 			$stmt = $db->prepare('SELECT * FROM application LEFT JOIN user_login ON application_user = user_login.user_id ORDER BY application_date');
+		
+		$stmt->execute();
+		
+		return $stmt->fetchAll();
+	}
+	
+	public static function GetApplicationsForUser($userID)
+	{
+		$db = openDB();
+		$stmt = $db->prepare("SELECT * FROM application LEFT JOIN user_login ON application_user = user_login.user_id WHERE user_login.user_id = :userID");
+		$stmt->bindParam(":userID", $userID, PDO::PARAM_STR);
 		
 		$stmt->execute();
 		
@@ -91,6 +101,19 @@ class Application
 		$result .= "<div id='application_date'>".$row['application_date']."</div>";
 		$result .= "<div id='application_content'><a href=".'phpfunc/download.php?file='.$fileDir." target='_blank'>View Application</a></div>";
 		$result .= "<div id='application_post_link'> <a href=''>There are ".$numberOfPosts." comments. Click here to view them.</a></div>";
+		$result .= "</div>";
+		
+		return $result;
+	}
+	
+	public static function BuildApplicationForUserHTML($row)
+	{
+		$result = "";		
+		$result .= "<div id='applicationbox'>";
+		$result .= "<div id='application_date'>".$row['application_date']."</div>";
+		$result .= "<div id='conference'>".$row['conf_name']."</div>";
+		$result .= "<div id='application_status'>".$row['application_status']."</div>";
+		$result .= "<div id='conference_lcoation'>Where: ".$row['city'].', '.$row['region'].', '.$row['country']."</div>";
 		$result .= "</div>";
 		
 		return $result;
@@ -138,6 +161,18 @@ class Application
 			$result .= Application::BuildApplicationHTML($row);
 			
 		}
+		echo $result;
+	}
+	
+	public static function ShowAllUserApplications($userID)
+	{
+		$applications = Application::GetApplicationsForUser($userID);
+		$result = "";
+		foreach ($applications as $row)
+		{
+			$result .= Application::BuildApplicationForUserHTML($row);
+		}
+		
 		echo $result;
 	}
 }
