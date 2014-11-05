@@ -3,6 +3,21 @@
 	session_start();
 ?>
 <h0>UTS Travel Funding</h0>
+
+<script>
+	function deleteApplication()
+	{
+		//this method will have parameters
+		if (confirm("You are about the delete one of your applications, are you sure you want to do this?"))
+		{
+			alert("Your application is now being deleted, just a sec");
+			//window.href.etc.etc
+			//redirect with the deleteApplication paramters to the delete application php file.
+		}
+	}
+
+</script>
+
 <div id="content">
 <table id="menu">
 	<tr>
@@ -29,6 +44,7 @@
 				<td>Application Name</td>
 				<td>Last Modified</td> 
 				<td>Status</td>
+				<td>Actions</td>
 			</tr>
 			<?php 
 			
@@ -39,6 +55,7 @@
 				<td>Eve</td>
 				<td>Sometime today</td> 
 				<td>NOT SUBMITTED</td>
+				<td><button onclick="deleteApplication()">DELETE</button></td>
 		  </tr>
 		</tbody>
   </table>
