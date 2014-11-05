@@ -177,7 +177,8 @@ html, body
 {
   height: 100%;
   color: yellow;
-  background-image: url("kyle.jpg");
+  background-image: url("seizure.gif");
+  cursor: crosshair !important;
 }
 
 #viewApplications{
