@@ -78,7 +78,7 @@
 			?>	
 		</tbody>
   </table>
-    
+     <img id="spookyDancing" src="images/spookyDancing.gif" width="40%"/>
   
   </div>
 </div>
