@@ -5,12 +5,12 @@
 <h0>UTS Travel Funding</h0>
 
 <script>
-	function deleteApplication(appId)
+	function deleteApplication(appId, appName)
 	{
 		//this method will have parameters
 		if (confirm("You are about the delete one of your applications, are you sure you want to do this?"))
 		{
-			alert("Your application " + appId + " is now being deleted, just a sec");
+			alert("Your application " + appName + " is now being deleted, just a sec");
 			//window.href.etc.etc
 			//redirect with the deleteApplication paramters to the delete application php file.
 		}
@@ -64,11 +64,14 @@
 			//get the arrays of applications and just display them here
 				for ($i = 0; $i < 7; $i++)
 				{
+					$name = "Eve";
+					$modified = "Yesterday";
+					$status = "Not Submitted";
 					echo "<tr>
-							<td>Eve</td>
-							<td>Sometime today</td> 
-							<td>NOT SUBMITTED</td>
-							<td><button onclick=\"deleteApplication('$i')\">DELETE</button></td>
+							<td>$name</td>
+							<td>$modified</td> 
+							<td>$status</td>
+							<td><button onclick=\"deleteApplication('$i', '$name')\">DELETE</button></td>
 						</tr>";
 				}
 			
