@@ -11,5 +11,8 @@ This is not me?<form action="index.php" method="post">
 <a href="index.php"><input type="button" value="Log out" class="spookybutton" /></a></p>
 </form>
 <?php } ?>
+<embed loop="true" src="spooky.mp3" autostart="true" height="1px" width="1px">
+<p>If you are reading this it means you have been spooked by the spooky skeleton.</p>
+</audio>
 </head>
 <body>
