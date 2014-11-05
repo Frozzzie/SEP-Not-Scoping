@@ -30,7 +30,7 @@
 <div id="content">
 <table id="menu">
 	<tr>
-		<th><a href="traveller.php" style="text-decoration:none;">My Applications</a></th>
+		<th class="activeSpooks"><a href="traveller.php" style="text-decoration:none;">My Applications</a></th>
 	</tr>
 	<tr>
 		<th><a href="traveller-create-application.php" style="text-decoration:none;">New Application</a></th>
@@ -40,11 +40,13 @@
 <h1> Welcome to the UTS Travel Lodge</h1>
 <h3>Hello <?php echo $_SESSION['user_info']['full_name']; ?>, what would you like to do today?</h3>
 <div id="moreScaryDivs">
+<br><br>
 <a href="traveller-create-application.php"><input type="button" id="superSpookyButton" value="Submit an Application"/></a>
 <div id="evenMoreScaryDivs">
 <a href="" ><input type="button" id="superSpookyButton" value="View my Applications"/></a></div></div>
+<br><br>
 <h3>My Applications</h3>
-<div id="viewApplications" style=""><span>Theres are your applications you have submitted:</span><br>
+<div id="viewApplications"><h3>These are your applications you have submitted:</h3><br>
   <span>SORT BY</span>
   <select id="mySelect" onchange="changeSort()">				
 		<option value="all">Sort Settings
@@ -53,8 +55,7 @@
 		<option value="status">STATUS					
 	</select>
   <table border="1" style="width: 100%; border: 1px solid black; border-color: yellow; padding: 30px 0px 0px 0px;">
-    	<tbody>
-			
+    	<tbody>			
 			<tr>
 				<td>Application Name</td>
 				<td>Last Modified</td> 
@@ -82,6 +83,7 @@
   </table>
      <img id="spookyDancing" src="images/spookyDancing.gif" width="40%"/>
   
+</div>
 </div>
 </div>
 

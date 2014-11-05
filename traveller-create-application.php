@@ -37,10 +37,16 @@
 			</tr>
 			<tr>
 				<td>
-					<label>Dates of Conference: </label><input type="text" size="20" name="conferenceDate" />
-				</td>
-				<td>
-					<label>Dates of Travel: </label><input type="text" size="20" name="travelDate" />
+						<table id="DateOfSpooks">
+					<tr>
+					<td>
+						<label>Dates of Conference: </label><input type="text" size="20" name="conferenceDate" />
+					</td>
+					<td>
+						<label>Dates of Travel: </label><input type="text" size="20" name="travelDate" />
+					</td>
+					</tr>
+					</table>
 				</td>
 			</tr>			
 			<tr>
@@ -150,8 +156,13 @@
 			<td>&nbsp;</td>
 			</tr>
 			<tr>
-			<td></td>
-				<td><input type="submit" value="Submit Application"/></td>
+			<td>
+				<table id="lol">
+					<tr>
+						<td><input id="right" type="submit" value="Submit Application"/></td>
+					</tr>
+				</table>
+			</td>
 			</tr>
 			</table>			
 		</form>

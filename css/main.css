@@ -188,6 +188,7 @@ html, body
 #spookyform
 {
 	position: absolute;
+	width: 600px;
 	/*-webkit-animation: myfirst 5s linear 2s infinite alternate;
 	animation: myfirst 5s linear 2s infinite alternate;*/
 }
@@ -242,4 +243,14 @@ html, body
 #spookyman label
 {
 	width: 15em;
+}
+
+#DateOfSpooks
+{
+	width: 800px;
+}
+
+#lol
+{
+	width: 86%;
 }
