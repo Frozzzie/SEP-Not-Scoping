@@ -54,7 +54,8 @@
 <div id="viewApplications" style=""><span>Theres are your applications you have submitted:</span><br>
   <span>SORT BY</span>
   <select id="mySelect" onchange="changeSort()">				
-		<option value="all">View All
+		<option value="all">Sort Settings
+		<option value="all">All
 		<option value="name">NAME
 		<option value="status">STATUS					
 	</select>
