@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2014 at 04:20 PM
+-- Generation Time: Nov 05, 2014 at 05:57 AM
 -- Server version: 5.6.20
 -- PHP Version: 5.5.15
 
@@ -83,38 +83,6 @@ CREATE TABLE IF NOT EXISTS `posts` (
   `post_content` text NOT NULL,
   `post_date` datetime(6) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Comments made about applications';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `travel_details`
---
-
-CREATE TABLE IF NOT EXISTS `travel_details` (
-  `conference_paper` tinyint(1) NOT NULL,
-  `journal_paper` tinyint(1) NOT NULL,
-  `name_details` text NOT NULL,
-  `url` varchar(50) NOT NULL,
-  `conf_start` date NOT NULL,
-  `conf_end` date NOT NULL,
-  `travel_start` date NOT NULL,
-  `travel_end` date NOT NULL,
-  `conf_country` text NOT NULL,
-  `conf_region` text NOT NULL,
-  `conf_city` text NOT NULL,
-  `conf_quality_A` tinyint(1) NOT NULL,
-  `conf_quality_B` tinyint(1) NOT NULL,
-  `conf_quality_Other` tinyint(1) NOT NULL,
-  `comment_quality` text NOT NULL,
-  `title` text NOT NULL,
-  `paper_accepted` tinyint(1) NOT NULL,
-  `paper_attached` text NOT NULL,
-  `herdc_points` tinyint(1) NOT NULL,
-  `travel_justification` text NOT NULL,
-  `duties` text NOT NULL,
-  `arrangements` text NOT NULL,
-  `supporting_docs` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
