@@ -167,6 +167,10 @@ html, body
   background-image: url("kyle.jpg");
 }
 
+#viewApplications{
+	padding: 50px;
+}
+
 #spookyform
 {
 	position: absolute;
