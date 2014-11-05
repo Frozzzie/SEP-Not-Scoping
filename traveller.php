@@ -65,18 +65,21 @@
 			<?php 
 			
 			//get the arrays of applications and just display them here
-				for ($i = 0; $i < 7; $i++)
-				{
-					$name = "Eve";
-					$modified = "Yesterday";
-					$status = "Not Submitted";
+				$applications = Application::ShowAllUserApplicationsRaw($_SESSION['user_info']['user_id'])	
+			
+				while ($row = $applications(PDO::FETCH_ASSOC)) {
+					$id = $row['application_id'];
+					$name = $row['full_name'];
+					$modified = $row['application_date'];
+					$status = $row['application_content'];
 					echo "<tr>
 							<td>$name</td>
 							<td>$modified</td> 
 							<td>$status</td>
-							<td><button onclick=\"deleteApplication('$i', '$name')\">DELETE</button></td>
+							<td><button onclick=\"deleteApplication('$id', '$name')\">DELETE</button></td>
 						</tr>";
 				}
+			
 			
 			?>	
 		</tbody>
@@ -89,7 +92,7 @@
 
 <?php
 	// load this user's applications
-	//Application::ShowAllUserApplications($_SESSION['user_info']['user_id']);
+	Application::ShowAllUserApplications($_SESSION['user_info']['user_id']);
 ?>
 
 <?php require('footer.php'); ?>

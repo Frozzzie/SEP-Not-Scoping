@@ -175,6 +175,11 @@ class Application
 		
 		echo $result;
 	}
+	
+	public static function ShowAllUserApplicationsRaw($userID)
+	{
+		return Application::GetApplicationsForUser($userID);
+	}
 }
 
 ?>
