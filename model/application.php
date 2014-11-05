@@ -10,55 +10,43 @@ class Application
 	// bools are $paper_accepted, $conf_confirmation_attached, $peer_review_attached, $copy_of_paper_attached, $special_invitation, $research_grant,
 	// 		$research_student and $research_strength_travel_support.
 	// Just incase you were wondering which ones. The rest are numbers, texts and dates. Should be easy to tell what is what. Check the DB for more info.
-	public static function CreateApplication($user, $content, $supportingdocuments, $conference_url, $conf_start_date, $conf_end_date,
-			$travel_start_date, $travel_end_date, $quality_of_paper, $paper_accepted, $conf_confirmation_attached, $peer_review_attached,
-			$copy_of_paper_attached, $special_invitation, $special_duties, $pep_arrangement_details, $research_grant, $research_student,
-			$research_strength, $research_strength_travel_support, $funding_stage, $supervisor_has_grant, $vc_conference_fund, $request_air_fare,
-			$request_accomodation, $request_conf_fees, $request_meals, $request_local_fares, $request_car_mileage, $request_other)
+	public static function CreateApplication($user, $conf_name, $conf_details, $conf_url, $conf_dates, $trave_dates, $country,
+											$region, $city, $conf_quality, $publication_importance, $paper_title, $paper_acceptance, $HERDC,
+											$justification, $special_invite, $special_duties, $PEP, $supporting_documents)
 	{
-		$request_total = $request_air_fare + $request_accomodation + $request_conf_fees + $request_meals + $request_local_fares +
-				$request_car_mileage + $request_other;
-		
+		if (!isset($HERDC))
+			$HERDC = "No";
+		if (!isset($special_duties))
+			$special_duties = "No";
 		$db = openDB();
-		$stmt = $db->prepare('INSERT INTO application (application_user, application_content, application_date, application_status, application_supporting_documents,
-							application_conf_url, conf_start_date, conf_end_date, travel_start_date, travel_end_date, quality_of_paper, paper_accepted,
-							conf_confirmation_attached, peer_review_attached, copy_of_paper_attached, special_invitation, special_duties, pep_arrangement_details,
-							research_grant, research_student, research_strength, research_strength_travel_support, funding_stage, supervisor_has_grant,
-							vc_conference_fund, request_air_fare, request_accomodation, request_conf_fees, request_meals, request_local_fares,
-							request_car_mileage, request_other, request_total) VALUES 
-											(?, ?, NOW(), "Pending", ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+		$stmt = $db->prepare('INSERT INTO `overseas`.`application` (`application_user`, 
+							`application_status`, `application_date`, `conf_name`, `conf_details`, `conf_url`,
+							`conf_dates`, `trave_dates`, `country`, `region`, `city`, `conf_quality`, `publication_importance`,
+							`paper_title`, `paper_acceptance`, `HERDC`, `justification`, `special_invite`, `special_duties`, `PEP`,
+							`supporting_documents`) 
+							VALUES (:user, "Pending", NOW(), :conf_name, :conf_details, :conf_url, :conf_dates, :travel_dates, :country, :region, 
+							:city, :conf_quality, :publication_importance, :paper_title, :paper_acceptance, :herdc, :justification, 
+							:special_invite, :special_duties, :pep, :supporting_documents)');
 		// Don't laugh.
-		$stmt->bindParam(1, $user, PDO::PARAM_STR);
-		$stmt->bindParam(2, $content, PDO::PARAM_STR);
-		$stmt->bindParam(3, $supportingdocuments, PDO::PARAM_STR);
-		$stmt->bindParam(4, $conference_url, PDO::PARAM_STR);
-		$stmt->bindParam(5, $conf_start_date, PDO::PARAM_STR);
-		$stmt->bindParam(6, $conf_end_date, PDO::PARAM_STR);
-		$stmt->bindParam(7, $travel_start_date, PDO::PARAM_STR);
-		$stmt->bindParam(8, $travel_end_date, PDO::PARAM_STR);
-		$stmt->bindParam(9, $quality_of_paper, PDO::PARAM_STR);
-		$stmt->bindParam(10, $paper_accepted, PDO::PARAM_STR);
-		$stmt->bindParam(11, $conf_confirmation_attached, PDO::PARAM_STR);
-		$stmt->bindParam(12, $peer_review_attached, PDO::PARAM_STR);
-		$stmt->bindParam(13, $copy_of_paper_attached, PDO::PARAM_STR);
-		$stmt->bindParam(14, $special_invitation, PDO::PARAM_STR);
-		$stmt->bindParam(15, $special_duties, PDO::PARAM_STR);
-		$stmt->bindParam(16, $pep_arrangement_details, PDO::PARAM_STR);
-		$stmt->bindParam(17, $research_grant, PDO::PARAM_STR);
-		$stmt->bindParam(18, $research_student, PDO::PARAM_STR);
-		$stmt->bindParam(19, $research_strength, PDO::PARAM_STR);
-		$stmt->bindParam(20, $research_strength_travel_support, PDO::PARAM_STR);
-		$stmt->bindParam(21, $funding_stage, PDO::PARAM_STR);
-		$stmt->bindParam(22, $supervisor_has_grant, PDO::PARAM_STR);
-		$stmt->bindParam(23, $vc_conference_fund, PDO::PARAM_STR);
-		$stmt->bindParam(24, $request_air_fare, PDO::PARAM_STR);
-		$stmt->bindParam(25, $request_accomodation, PDO::PARAM_STR);
-		$stmt->bindParam(26, $request_conf_fees, PDO::PARAM_STR);
-		$stmt->bindParam(27, $request_meals, PDO::PARAM_STR);
-		$stmt->bindParam(28, $request_local_fares, PDO::PARAM_STR);
-		$stmt->bindParam(29, $request_car_mileage, PDO::PARAM_STR);
-		$stmt->bindParam(30, $request_other, PDO::PARAM_STR);
-		$stmt->bindParam(31, $request_total, PDO::PARAM_STR);
+		$stmt->bindParam(':user', $user, PDO::PARAM_STR);
+		$stmt->bindParam(':conf_name', $conf_name, PDO::PARAM_STR);
+		$stmt->bindParam(':conf_details', $conf_details, PDO::PARAM_STR);
+		$stmt->bindParam(":conf_url", $conf_url, PDO::PARAM_STR);
+		$stmt->bindParam(":conf_dates", $conf_dates, PDO::PARAM_STR);
+		$stmt->bindParam(":travel_dates", $trave_dates, PDO::PARAM_STR);
+		$stmt->bindParam(":country", $country, PDO::PARAM_STR);
+		$stmt->bindParam(":region", $region, PDO::PARAM_STR);
+		$stmt->bindParam(":city", $city, PDO::PARAM_STR);
+		$stmt->bindParam(":conf_quality", $conf_quality, PDO::PARAM_STR);
+		$stmt->bindParam(":publication_importance", $publication_importance, PDO::PARAM_STR);
+		$stmt->bindParam(":paper_title", $paper_title, PDO::PARAM_STR);
+		$stmt->bindParam(":paper_acceptance", $paper_acceptance, PDO::PARAM_STR);
+		$stmt->bindParam(":herdc", $HERDC, PDO::PARAM_STR);
+		$stmt->bindParam(":justification", $justification, PDO::PARAM_STR);
+		$stmt->bindParam(":special_invite", $special_invite, PDO::PARAM_STR);
+		$stmt->bindParam(":special_duties", $special_duties, PDO::PARAM_STR);
+		$stmt->bindParam(":pep", $PEP, PDO::PARAM_STR);
+		$stmt->bindParam(":supporting_documents", $supporting_documents, PDO::PARAM_STR);
 		$stmt->execute();
 	}
 	

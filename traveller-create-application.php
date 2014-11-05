@@ -141,7 +141,7 @@
 						<td>Attach supporting documents</td>
 					</tr>
 					<tr>
-						<td><label>&nbsp;</label><input type="file" name="content"/></td>
+						<td><label>&nbsp;</label><input type="file" name="supportingDocuments"/></td>
 					</tr>
 					</table>
 				</td>
