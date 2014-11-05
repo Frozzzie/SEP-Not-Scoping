@@ -19,7 +19,7 @@
 	function changeSort()
 	{	
 		//ehh ajax would be tedious, so a simple refresh with new paramets should do it
-		var sort = document.getElementById(mySelect).value;
+		var sort = document.getElementById("mySelect").value;
 		window.location.href = "?sort=" + sort;
 	}
 	
