@@ -19,7 +19,32 @@
 <a href="traveller-create-application.php"><input type="button" id="superSpookyButton" value="Submit an Application"/></a>
 <div id="evenMoreScaryDivs">
 <a href="" ><input type="button" id="superSpookyButton" value="View my Applications"/></a></div></div>
-
+<div id="viewApplications" style="
+"><span>Theres are your applications you have submitted:</span><br>
+  
+  <table border="1" style="width: 100%; border: 1px solid black; border-color: yellow; padding: 30px 0px 0px 0px;">
+    	<tbody>
+			
+			<tr>
+				<td>Application Name</td>
+				<td>Last Modified</td> 
+				<td>Status</td>
+			</tr>
+			<?php 
+			
+			//get the arrays of applications and just display them here
+			
+			?>	
+			<tr>
+				<td>Eve</td>
+				<td>Sometime today</td> 
+				<td>NOT SUBMITTED</td>
+		  </tr>
+		</tbody>
+  </table>
+    
+  
+  </div>
 </div>
 </div>
 <?php require('footer.php'); ?>
