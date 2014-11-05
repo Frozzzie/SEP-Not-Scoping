@@ -19,7 +19,7 @@
 <a href="traveller-create-application.php"><input type="button" id="superSpookyButton" value="Submit an Application"/></a>
 <div id="evenMoreScaryDivs">
 <a href="" ><input type="button" id="superSpookyButton" value="View my Applications"/></a></div></div>
-<img id="spookyCenter" src="images/2spook.gif" width="40%"/>
+
 </div>
 </div>
 <?php require('footer.php'); ?>
