@@ -4,22 +4,28 @@
 	require_once __DIR__.'/../inc/functions.php';
 	require_once __DIR__.'/../model/application.php';	
 	
-	// add a lot more here.
-	/*
-		public static function CreateApplication($user, $content, $supportingdocuments, $conference_url, $conf_start_date, $conf_end_date,
-			$travel_start_date, $travel_end_date, $quality_of_paper, $paper_accepted, $conf_confirmation_attached, $peer_review_attached,
-			$copy_of_paper_attached, $special_invitation, $special_duties, $pep_arrangement_details, $research_grant, $research_student,
-			$research_strength, $research_strength_travel_support, $funding_stage, $supervisor_has_grant, $vc_conference_fund, $request_air_fare,
-			$request_accomodation, $request_conf_fees, $request_meals, $request_local_fares, $request_car_mileage, $request_other)
-	*/
-	try {
-		Application::CreateApplication($_SESSION['user_info']['user_id'], $_POST['content'], "", "", "", "", "", "", "", false, false, false,
-			false, false, "", "", false, false, "", false, 'Stage 1', false, 0, 0, 0, 0, 0, 0, 0, 0);
+	// move the uploaded file to storage
+	$target_dir = __DIR__.'/../applications/'.$_SESSION['user_info']['user_id'].'/';
+	$target_file = $target_dir . basename($_FILES['supportingDocuments']['name']);
+	$file_type = pathinfo($target_file, PATHINFO_EXTENSION);
+	echo var_dump($_FILES);
+	if ($file_type !== "zip")
+	{
+		// its bad. Upload it anyway
 	}
-	catch (Exception $e) {
-		// do nothing
-		echo "";
+	
+	if (move_uploaded_file($_FILES['supportingDocuments']['tmp_name'], $target_file))
+	{
+	
+	} else {
+		echo "File could not be uploaded";
 	}
+	
+	Application::CreateApplication($_SESSION['user_info']['user_id'], $_POST['conferenceName'], $_POST['conferenceDetails'], $_POST['conferenceURL'],
+				$_POST['conferenceDate'], $_POST['travelDate'], $_POST['country'], $_POST['region'], $_POST['city'], $_POST['converenceQuality'],
+				$_POST['conferenceComment'], $_POST['paperTitle'], $_POST['paperAcceptance'], $_POST['HERDC'], $_POST['justification'], 
+				$_POST['invitation'], $_POST['beyondDuty'], $_POST['PEP'], $_FILES['supportingDocuments']['name']);
+
 	$_SESSION['successful_upload'] = true;
 	redirect(__DIR__.'/../traveller.php');
 	

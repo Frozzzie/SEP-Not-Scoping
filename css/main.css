@@ -170,8 +170,8 @@ html, body
 #spookyform
 {
 	position: absolute;
-	-webkit-animation: myfirst 5s linear 2s infinite alternate;
-	animation: myfirst 5s linear 2s infinite alternate;
+	/*-webkit-animation: myfirst 5s linear 2s infinite alternate;
+	animation: myfirst 5s linear 2s infinite alternate;*/
 }
 
 /* Chrome, Safari, Opera */
