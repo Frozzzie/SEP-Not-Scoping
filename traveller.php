@@ -5,12 +5,12 @@
 <h0>UTS Travel Funding</h0>
 
 <script>
-	function deleteApplication()
+	function deleteApplication(appId)
 	{
 		//this method will have parameters
 		if (confirm("You are about the delete one of your applications, are you sure you want to do this?"))
 		{
-			alert("Your application is now being deleted, just a sec");
+			alert("Your application " + appId + " is now being deleted, just a sec");
 			//window.href.etc.etc
 			//redirect with the deleteApplication paramters to the delete application php file.
 		}
@@ -41,7 +41,7 @@
 <div id="moreScaryDivs">
 <a href="traveller-create-application.php"><input type="button" id="superSpookyButton" value="Submit an Application"/></a>
 <div id="evenMoreScaryDivs">
-<a href="" ><input type="button" id="superSpookyButton" value="View my Applications"/></a></div></div>
+<a href="" ></a></div></div>
 <div id="viewApplications" style="
 "><span>Theres are your applications you have submitted:</span><br>
   <span>SORT BY</span>
@@ -62,14 +62,17 @@
 			<?php 
 			
 			//get the arrays of applications and just display them here
+				for ($i = 0; $i < 7; $i++)
+				{
+					echo "<tr>
+							<td>Eve</td>
+							<td>Sometime today</td> 
+							<td>NOT SUBMITTED</td>
+							<td><button onclick=\"deleteApplication('$i')\">DELETE</button></td>
+						</tr>";
+				}
 			
 			?>	
-			<tr>
-				<td>Eve</td>
-				<td>Sometime today</td> 
-				<td>NOT SUBMITTED</td>
-				<td><button onclick="deleteApplication()">DELETE</button></td>
-		  </tr>
 		</tbody>
   </table>
     
