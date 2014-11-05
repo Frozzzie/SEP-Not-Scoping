@@ -69,7 +69,7 @@ a
 	border: yellow 1px solid;
 	width: 80%;
 	float: right;
-	height: 500px;
+	height: auto;
 }
 
 #mainSpooks2
@@ -96,6 +96,19 @@ h0
 	margin-right: 0.7em;
 	right:0;
 	position: absolute;
+}
+
+#spookyDancing
+{
+	padding-top: 20px;
+	display: block;
+	margin: auto;
+	
+	position: relative;
+	width: 100px;
+	
+	-webkit-animation: myfirst 5s linear 2s infinite alternate;
+	animation: myfirst 5s linear 2s infinite alternate;
 }
 
 h1
@@ -135,7 +148,7 @@ h1
 {
 	width: 100%;
 	background-color: white;
-	float: absolute;
+	float: left;
 	color: black;
 }
 
@@ -167,6 +180,10 @@ html, body
   background-image: url("kyle.jpg");
 }
 
+#viewApplications{
+	padding: 50px;
+}
+
 #spookyform
 {
 	position: absolute;
@@ -177,13 +194,17 @@ html, body
 /* Chrome, Safari, Opera */
 @-webkit-keyframes myfirst {
     0%   {left:0px; top:0px;}
-    100% {left:1000px; top:0px;}
+	25%   {left:-200px; top:0px;}
+	50%   {left:200px; top:0px;}
+    100% {left:0px; top:0px;}
 }
 
 /* Standard syntax */
 @keyframes myfirst {
     0%   {left:0px; top:0px;}
-    100% {left:1000px; top:0px;}
+	25%   {left:-200px; top:0px;}
+	50%   {left:200px; top:0px;}
+    100% {left:0px; top:0px;}
 }
 
 #spookyConference
