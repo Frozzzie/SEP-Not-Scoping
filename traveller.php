@@ -15,6 +15,14 @@
 			//redirect with the deleteApplication paramters to the delete application php file.
 		}
 	}
+	
+	function changeSort()
+	{	
+		//ehh ajax would be tedious, so a simple refresh with new paramets should do it
+		var sort = document.getElementById(mySelect).value;
+		window.location.href = "?sort=" + sort;
+	}
+	
 
 </script>
 
@@ -36,7 +44,12 @@
 <a href="" ><input type="button" id="superSpookyButton" value="View my Applications"/></a></div></div>
 <div id="viewApplications" style="
 "><span>Theres are your applications you have submitted:</span><br>
-  
+  <span>SORT BY</span>
+  <select id="mySelect" onchange="changeSort()">				
+		<option value="all">View All
+		<option value="name">NAME
+		<option value="status">STATUS					
+	</select>
   <table border="1" style="width: 100%; border: 1px solid black; border-color: yellow; padding: 30px 0px 0px 0px;">
     	<tbody>
 			
